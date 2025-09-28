@@ -1,0 +1,46 @@
+Inheritance: Copying notes from your senior without changes.
+
+Overriding: You edit notes to your style.
+
+Abstraction: Teacher gives you an assignment topic (must be completed, but how is your choice).
+
+
+🔑 Golden Rule
+
+Compile-time access depends on the reference type, not the actual object.
+
+protected in another package:
+
+Accessible via this or subclass reference.
+
+❌ Not accessible via superclass reference (even if it points to a subclass object).
+
+
+
+                ┌──────────────────────────────────────┐
+                │             SAME PACKAGE             │
+                └──────────────────────────────────────┘
+   private ❌     default ✅     protected ✅     public ✅
+
+
+                ┌──────────────────────────────────────┐
+                │ DIFFERENT PACKAGE (NOT SUBCLASS)     │
+                └──────────────────────────────────────┘
+   private ❌     default ❌     protected ❌     public ✅
+
+
+                ┌──────────────────────────────────────┐
+                │ DIFFERENT PACKAGE (SUBCLASS)         │
+                └──────────────────────────────────────┘
+   private ❌     default ❌     protected ✅*    public ✅
+   (* only via subclass reference, not via superclass ref)
+
+-------------------------------------------------------------------------------------
+
+STATIC AND FINAL:
+
+Type	Belongs To	Can Change?	Per Object or Shared?	Use Case
+Normal variable	Object	✅ Yes	Each object has its own	Regular fields (e.g., name, age)
+final variable	Object	❌ No	Each object has its own	Immutable object properties (e.g., final String panNumber)
+static variable	Class	✅ Yes	Shared across all objects	Shared properties (e.g., companyName)
+static final var	Class	❌ No	Single constant for all	Constants (e.g., PI, MAX_USERS)
