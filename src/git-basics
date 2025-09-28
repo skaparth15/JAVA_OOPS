@@ -1,0 +1,91 @@
+Step 1: Create a repository on GitHub
+
+Go to GitHub
+ → log in.
+
+Click + → New repository.
+
+Give it a name (e.g., JAVA_OOPS).
+
+Do not initialize with README (we’ll push local folder).
+
+Click Create repository.
+
+✅ You’ll see a page with instructions like this:
+
+git remote add origin https://github.com/yourusername/JAVA_OOPS.git
+git branch -M main
+git push -u origin main
+
+Step 2: Open your local project folder
+cd /path/to/your/folder
+
+
+Example:
+
+cd ~/Desktop/java_practice/OOPS
+
+Step 3: Initialize Git locally
+git init
+
+
+Creates .git folder → your local Git repository.
+
+Default branch is master (or main depending on Git version).
+
+Step 4: Configure Git identity (first time)
+git config --global user.name "Rajesh"
+git config --global user.email "your_github_email@example.com"
+
+
+Required for commits to be linked to your GitHub account.
+
+Step 5: Add files and commit
+git add .
+git commit -m "Initial commit"
+
+
+Adds all files in your folder to the local repository.
+
+Creates the first commit.
+
+Step 6: Connect to GitHub repository (add remote)
+git remote add origin https://github.com/skaparth15/JAVA_OOPS.git
+
+
+origin → nickname for your GitHub repo.
+
+Check connection:
+
+git remote -v
+
+
+Output:
+
+origin  https://github.com/skaparth15/JAVA_OOPS.git (fetch)
+origin  https://github.com/skaparth15/JAVA_OOPS.git (push)
+
+Step 7: Push local branch to GitHub
+
+If local branch is master:
+
+git push -u origin master
+
+
+If you want to rename local branch to main:
+
+git branch -M main
+git push -u origin main
+
+
+✅ Now your local folder is on GitHub!
+
+Step 8: Verify
+
+Go to your GitHub repository → you should see all files.
+
+Next time, you can just use:
+
+git add .
+git commit -m "your message"
+git push
